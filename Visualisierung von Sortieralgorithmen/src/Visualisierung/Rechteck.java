@@ -1,7 +1,5 @@
 package Visualisierung;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.RenderingHints;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 import javax.swing.*;
@@ -9,24 +7,36 @@ import javax.swing.*;
 public class Rechteck extends JLabel{
 	private int hight;
 	private int WIDTH;
-	private String PATH;
+	private String PATH_GREEN;
+	private String PATH_RED;
+	private String aktuellerPfad;
 
 	public Rechteck(int hight) {
 		 this.hight = hight;
 		 WIDTH= 9;
-		 PATH = ""; //TODO 
+		 PATH_GREEN = "Green Balken.png";
+		 PATH_RED = "RedBalken.png";
+		 aktuellerPfad = PATH_GREEN;
 		 setIcon();
+		 super.setAlignmentY(BOTTOM_ALIGNMENT);
 	}
 	
 	public void setIcon() {
-		ImageIcon icon = new ImageIcon("C:\\Users\\marvi\\Downloads\\Download (1).png"); //TODO
+		ImageIcon icon = new ImageIcon(aktuellerPfad); //TODO
 		Image image = icon.getImage();
 		image = image.getScaledInstance(WIDTH, hight, java.awt.Image.SCALE_SMOOTH);
 		icon.setImage(image);
 		super.setIcon(icon);
 	}
 	
-	private Image getScaledImage(Image srcImg, int w, int h){
+	public void setImageGreen() {
+		aktuellerPfad = PATH_GREEN;
+	}
+	
+	public void sezImageRed() {
+		aktuellerPfad = PATH_RED;
+	}
+	/*private Image getScaledImage(Image srcImg, int w, int h){
 	    BufferedImage resizedImg = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
 	    Graphics2D g2 = resizedImg.createGraphics();
 
@@ -35,5 +45,7 @@ public class Rechteck extends JLabel{
 	    g2.dispose();
 
 	    return resizedImg;
+	
 	}
+	*/
 }
