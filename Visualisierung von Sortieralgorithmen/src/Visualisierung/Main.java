@@ -35,7 +35,7 @@ public class Main {
 		SteuerungPanel stp = new SteuerungPanel();
 		stp.setVisible(true);
 		f.add(p, BorderLayout.CENTER);
-		f.add(p1, BorderLayout.PAGE_END);
+		//f.add(p1, BorderLayout.PAGE_END);
 		f.add(stp, BorderLayout.LINE_END);
 		//SteuerungPanel sp = new SteuerungPanel();
 		//f.add(new JLabel(new ImageIcon("Green Balken.png")));
