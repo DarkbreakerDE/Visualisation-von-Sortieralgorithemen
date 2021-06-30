@@ -59,7 +59,8 @@ public class SteuerungPanel extends JPanel implements ActionListener{
 				System.out.println("Button S1");
 				break;
 			case "Selection Sort":
-				System.out.println("Button S2");
+				System.out.println("Selectionsort");
+				p.Selectionsort();
 				break;
 		}
 	}
